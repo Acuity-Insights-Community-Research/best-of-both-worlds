@@ -232,11 +232,10 @@ your_data_directory/
 | `response_id` | Unique identifier for each response |
 | `criteria_id` | Name of the criterion being evaluated (must match keys in `CRITERIA_DEFINITIONS`) |
 | `label` | Evaluation for this criterion |
-| `question_id` | Question identifier (e.g., "Q1", "Q2") |
-| `statement` | The scenario/situation statement |
+| `question_id` | Question identifier (e.g., "Q1") |
+| `statement` | The scenario/situation/item statement |
 | `question_text` | The question being answered |
-| `response_q1` | Response text for question 1 |
-| `response_q2` | Response text for question 2 |
+| `response` | Response text to the question|
 | `aspect_primary` | Primary aspect being evaluated |
 
 **Note:** Multiple rows per response/criterion are expected (one per rater). The system calculates majority labels automatically.
