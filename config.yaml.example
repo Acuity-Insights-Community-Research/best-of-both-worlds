@@ -1,0 +1,59 @@
+# SJT AI Rating System Configuration
+# Copy this file to config.yaml and update with your values
+# 
+# Configuration priority: Command-line args > Env vars > .env file > config.yaml > defaults
+#
+# NOTE: API Keys should be set in .env file (copy .env.example to .env)
+# Do not commit API keys to this file or version control!
+
+# Criteria Training Configuration
+criteria_training:
+  # Base filename for train/test CSV files (without _train_<criterion>.csv suffix)
+  base_filename: "/path/to/sjt_split"
+  
+  # LLM Provider settings
+  provider: "anthropic"  # Options: anthropic, openai, google
+  model_name: "claude-3-7-sonnet-20250219"  # Optional: override default model
+  
+  # Training parameters
+  sample_size: 100      # Max training samples per criterion
+  max_samples: 15       # Max evaluation samples per criterion
+  optimize: true        # Enable DSPy optimization
+  optimizer_type: "bootstrap"  # Options: bootstrap, mipro, bandit
+  
+  # Curriculum learning (optional)
+  use_curriculum: false
+  curriculum_threshold: 0.8  # Only use examples with >80% rater agreement
+  
+  # Output settings
+  model_dir: "train/artifacts/criteria_models"  # Where to save trained models
+  save_results: true    # Save evaluation results JSON
+
+# Score Training Configuration
+score_training:
+  # Path to CSV file with criteria features and scores
+  csv_file: "/path/to/content_quality_features.csv"
+  
+  # Output path for trained score model
+  output_path: "train/artifacts/score_model.joblib"
+  
+  # Test split size
+  test_size: 0.2  # 20% for testing
+
+# Inference Configuration
+inference:
+  # Path to directory containing saved criterion evaluators
+  criteria_model_dir: "train/artifacts/criteria_models"
+  
+  # Path to saved score prediction model
+  score_model_path: "train/artifacts/score_model.joblib"
+  
+  # LLM Provider for inference (should match training)
+  provider: "anthropic"
+  model_name: ""  # Optional: override default model
+
+# DSPy Cache Configuration
+dspy_cache:
+  # Cache directory (auto-configured if not set)
+  cache_dir: ""  # Leave empty for auto-configuration
+

@@ -1,0 +1,47 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+
+# Sensitive - DO NOT COMMIT
+config.yaml
+*.joblib
+*.pkl
+*.pickle
+
+# Data files
+*.csv
+*.json
+!config.yaml.example
+
+# Model artifacts
+train/artifacts/
+inference/saved_criteria_models/
+inference/checkpoints/
+*.dspy_cache/
+
+# Inference outputs
+inference/kept_cols*/
+inference/criteria_kept*/
+inference/yiyu_scores/
+
+# Logs
+logs/
+*.log
+
+# API keys
+.env
+.env.*

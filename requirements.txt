@@ -1,0 +1,12 @@
+# Core dependencies for Casper AI Rating System
+dspy-ai>=2.4.0
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+joblib>=1.3.0
+PyYAML>=6.0  # For config file parsing
+python-dotenv>=1.0.0  # For .env file loading
+anthropic>=0.18.0  # For Anthropic Claude
+openai>=1.0.0     # For OpenAI models
+google-generativeai>=0.3.0  # For Google Gemini
+
