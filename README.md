@@ -335,4 +335,4 @@ This code is provided for research purposes. Please cite our paper if you use th
 Research Innovation Team @ Acuity Insights
 
 ## Documentation 
-This README and our paper [LINK TBD]
+This README and our paper [https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full]
